@@ -1,0 +1,6 @@
+export type Camera={id:string;code:string;name:string;department:string;latitude:number;longitude:number;camera_type:string;source_protocol:string;status:'online'|'offline'|'degraded';enabled:boolean;simulated:boolean;last_heartbeat:string|null;zone:string};
+export type Event={id:string;external_event_id:string;camera_id:string;occurred_at:string;vehicle_number:string;normalized_vehicle_number:string;confidence:number;vehicle_type:string;bounding_box:{x:number;y:number;width:number;height:number}};
+export type Alert={id:string;event_id:string;watchlist_id:string;camera_id:string;severity:string;status:'new'|'acknowledged'|'resolved';created_at:string;occurred_at:string;confidence:number;vehicle_number:string;camera_name:string;latitude:number;longitude:number;reason:string};
+export type Dashboard={cameras:{total:number;online:number;offline:number;degraded:number};active_alerts:number;detections_24h:number;watchlist_active:number};
+export type Movement={vehicle_number:string;route_note:string;detections:{id:string;timestamp:string;confidence:number;camera_name:string;latitude:number;longitude:number}[]};
+export type User={id:string;email:string;name:string;role:'admin'|'operator'};
